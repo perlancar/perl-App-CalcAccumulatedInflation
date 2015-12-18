@@ -76,7 +76,7 @@ sub calc_accumulated_inflation {
             push @res, {
                 year  => $year,
                 rate  => sprintf("%.2f%%", $rates->[$year]),
-                index => sprintf("%.4f%%", $index),
+                index => sprintf("%.4f", $index),
             };
         }
     }
