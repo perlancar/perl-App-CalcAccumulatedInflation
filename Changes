@@ -1,5 +1,13 @@
 Revision history for App-CalcAccumulatedInflation
 
+0.02    2015-12-18 (PERLANCAR)
+
+        - No functional changes.
+
+        - [build] Rebuild with update Perinci::To::POD to fix formatting of
+          examples.
+
+
 0.01    2015-12-18 (PERLANCAR)
 
         - First release.
