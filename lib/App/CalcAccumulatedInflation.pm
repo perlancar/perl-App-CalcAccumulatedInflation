@@ -70,12 +70,13 @@ sub calc_accumulated_inflation {
         }
     } else {
         my $rates = $args{rates};
-        while ($year < $#{$rates}) {
-            $index *= 1 + $rates->[$year]/100;
+        while ($year <= $#{$rates}) {
+            my $rate = $rates->[$year];
+            $index *= 1 + $rate/100;
             $year++;
             push @res, {
                 year  => $year,
-                rate  => sprintf("%.2f%%", $rates->[$year]),
+                rate  => sprintf("%.2f%%", $rate),
                 index => sprintf("%.4f", $index),
             };
         }
