@@ -26,7 +26,7 @@ _
         },
         rates => {
             summary => 'Different rates for each year, in percent',
-            schema  => ['array*', of=>'float*', min_len=>1],
+            schema  => ['array*', of=>'float*', min_len=>1, 'x.perl.coerce_rules'=>['str_comma_sep']],
         },
         yearly_rate => {
             summary => 'A single rate for every year, in percent',
