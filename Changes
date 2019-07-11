@@ -1,11 +1,11 @@
-0.03    2017-03-09 (PERLANCAR)
+0.03    2017-03-09  Released-By: PERLANCAR
 
 	- [Bugfix] Fix off-by-one error in calculation using --rates.
 
 	- Tweak Rinci metadata: allow comma-separated in --rates.
 
 
-0.02    2015-12-18 (PERLANCAR)
+0.02    2015-12-18  Released-By: PERLANCAR
 
         - No functional changes.
 
@@ -13,6 +13,6 @@
           examples.
 
 
-0.01    2015-12-18 (PERLANCAR)
+0.01    2015-12-18  Released-By: PERLANCAR
 
         - First release.
