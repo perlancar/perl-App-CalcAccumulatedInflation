@@ -1,3 +1,9 @@
+0.04    2019-11-29  Released-By: PERLANCAR; Urgency: medium
+
+	- Update coerce rule names in Sah schemas (Data::Sah::Coerce
+	  0.034+).
+
+
 0.03    2017-03-09  Released-By: PERLANCAR
 
 	- [Bugfix] Fix off-by-one error in calculation using --rates.
