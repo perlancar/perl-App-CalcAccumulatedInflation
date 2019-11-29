@@ -1,6 +1,8 @@
 package App::CalcAccumulatedInflation;
 
+# AUTHOR
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -26,7 +28,7 @@ _
         },
         rates => {
             summary => 'Different rates for each year, in percent',
-            schema  => ['array*', of=>'float*', min_len=>1, 'x.perl.coerce_rules'=>['str_comma_sep']],
+            schema  => ['array*', of=>'float*', min_len=>1, 'x.perl.coerce_rules'=>['From_str::comma_sep']],
         },
         yearly_rate => {
             summary => 'A single rate for every year, in percent',
