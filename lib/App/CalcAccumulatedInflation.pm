@@ -1,6 +1,6 @@
 package App::CalcAccumulatedInflation;
 
-# AUTHOR
+# AUTHORITY
 # DATE
 # DIST
 # VERSION
@@ -35,6 +35,14 @@ _
             schema => 'float*',
             cmdline_aliases => {y=>{}},
         },
+        base_index => {
+            schema => 'float*',
+            default => 1,
+        },
+        base_year => {
+            schema => 'float*',
+            default => 0,
+        },
     },
     args_rels => {
         req_one => ['rates', 'yearly_rate'],
@@ -57,12 +65,13 @@ _
 sub calc_accumulated_inflation {
     my %args = @_;
 
-    my $index = 1;
-    my $year = 0;
+    my $index = $args{base_index} // 1;
+    my $year = $args{base_year} // 0;
     my @res = ({year=>$year, index=>$index});
 
+    my $i = 0;
     if (defined $args{yearly_rate}) {
-        while ($year < $args{years}) {
+        while ($i++ < $args{years}) {
             $year++;
             $index *= 1 + $args{yearly_rate}/100;
             push @res, {
@@ -72,7 +81,7 @@ sub calc_accumulated_inflation {
         }
     } else {
         my $rates = $args{rates};
-        while ($year <= $#{$rates}) {
+        while ($i++ <= $#{$rates}) {
             my $rate = $rates->[$year];
             $index *= 1 + $rate/100;
             $year++;
